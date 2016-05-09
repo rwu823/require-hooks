@@ -21,7 +21,7 @@ requireHooks(({ext, raw, mod, requirePath})=> {
     case '.md': // do nothing
       return null
   }
-}
+})
 ```
 
 
