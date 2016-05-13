@@ -1,4 +1,4 @@
-[![version](https://img.shields.io/npm/v/rwu823/require-hooks.svg?label=version)](https://www.npmjs.org/package/rwu823/require-hooks) [![Build Status](https://img.shields.io/travis/rwu823/require-hooks.svg?branch=master)](https://travis-ci.org/rwu823/require-hooks) [![Coverage](https://img.shields.io/coveralls/rwu823/require-hooks.svg)](https://coveralls.io/github/rwu823/require-hooks)
+[![version](https://img.shields.io/npm/v/require-hooks.svg?label=version)](https://www.npmjs.org/package/rwu823/require-hooks) [![Build Status](https://img.shields.io/travis/rwu823/require-hooks.svg?branch=master)](https://travis-ci.org/rwu823/require-hooks) [![Coverage](https://img.shields.io/coveralls/rwu823/require-hooks.svg)](https://coveralls.io/github/rwu823/require-hooks)
 
 # Node Require Hooks
 
