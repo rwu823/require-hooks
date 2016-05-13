@@ -12,7 +12,7 @@ const isExists = (p)=> {
 
 
 module.exports = (paths, requirePath)=> {
-  let closestModule, closestPath, hasClosestPath
+  let closestModule, closestPath
 
   paths.some((p)=> {
     if (!closestPath) closestPath = p

@@ -20,14 +20,13 @@ module.exports = (callback)=> {
     const {paths, filename} = this
 
     if (isFunction(callback) && (ext && ext !== '.js')) {
-      let isExists = true
       let rawPath = path.join(filename, '../', requirePath)
 
       if (!isRelative) {
         rawPath = closestModule(paths, requirePath)
       }
 
-      const raw = isExists ? fs.readFileSync(rawPath).toString() : null
+      const raw = fs.readFileSync(rawPath).toString()
       const hasHook = callback({ext, mod: this, raw, requirePath})
       if (hasHook !== undefined) return hasHook
     }
