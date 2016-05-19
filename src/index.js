@@ -1,6 +1,5 @@
 import Module from 'module'
 import path from 'path'
-import fs from 'fs'
 import isRelativePath from './is-relative-path'
 import closestModule from './closest-module'
 
@@ -26,8 +25,7 @@ module.exports = (callback)=> {
         rawPath = closestModule(paths, requirePath)
       }
 
-      const raw = fs.readFileSync(rawPath).toString()
-      const hasHook = callback({ext, mod: this, raw, requirePath})
+      const hasHook = callback({ext, mod: this, requirePath, rawPath})
       if (hasHook !== undefined) return hasHook
     }
 

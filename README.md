@@ -11,13 +11,14 @@ In browser's world we have `webpack` and many great loaders let us require every
 ```javascript
 // include in main file
 import requireHooks from 'require-hooks'
-
-requireHooks(({ext, raw, mod, requirePath})=> {
+import fs, {readFileSync} from 'fs'
+  
+requireHooks(({ext, rawPath, mod, requirePath})=> {
   switch (ext) {
     case '.css': // require('./[everything].css') will as 'css'
       return 'css'
-    case '.raw':
-      return raw
+    case '.raw': // return file raw body
+      return readFileSync(rawPath).toString()
     case '.md': // do nothing
       return null
   }
@@ -61,7 +62,7 @@ describe('#Test react tab component', ()=> {
 Includes require hooks to fix this
 
 ```javascript
-require('require-hooks')(({ext, raw, mod, requirePath})=> {
+require('require-hooks')(({ext, mod, requirePath})=> {
   switch (ext) {
     case '.css': // do nothing
       return null
@@ -84,8 +85,8 @@ describe('#Test react tab component', ()=> {
 If doesn't have any `return` it will uses original require function
 
 - `ext` get filename extension
-- `raw` get raw body, like [raw-loader](https://github.com/webpack/raw-loader) in webpack
 - `mod`  export as module
-- `requirePath` get require path
+- `requirePath` get relative require path
+- `rawPath` get full raw path
 
 ###  

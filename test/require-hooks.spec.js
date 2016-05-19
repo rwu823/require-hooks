@@ -1,12 +1,13 @@
 import test from 'ava'
 import requireHooks from '../src'
+import fs, {readFileSync} from 'fs'
 
-requireHooks(({ext, raw, mod, requirePath})=> {
+requireHooks(({ext, rawPath, mod, requirePath})=> {
   switch (ext) {
     case '.css':
       return 'css'
     case '.raw':
-      return raw
+      return readFileSync(rawPath).toString()
     case '.md':
       return null
   }
